@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListarComponent } from './Persona/listar/listar.component';
-import { AddComponent } from './Persona/add/add.component';
-import { EditComponent } from './Persona/edit/edit.component';
+import { EditarPeliculaComponent } from './Componentes/cartelera/editar-pelicula/editar-pelicula.component';
+import { CentralPeliculaComponent } from './Componentes/cartelera/central-pelicula/central-pelicula.component';
+import { PrincipalComponent } from './Componentes/cartelera/principal/principal.component';
+import { AgregarPeliculaComponent } from './Componentes/cartelera/agregar-pelicula/agregar-pelicula.component';
 
 
 const routes: Routes = [
-  {path: 'listar', component:ListarComponent},
-  {path: 'add', component:AddComponent},
-  {path: 'editar', component:EditComponent}
+  {path: 'editar-pelicula/:id', component: EditarPeliculaComponent},
+  {path: 'central-pelicula', component: CentralPeliculaComponent},
+  {path: '', component:CentralPeliculaComponent},
+  {path: 'ver-pelicula/:id', component: PrincipalComponent},
+  {path: 'agregar-pelicula', component: AgregarPeliculaComponent}
 ];
 
 @NgModule({

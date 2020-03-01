@@ -1,0 +1,47 @@
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">RepelisFISI</h1>
+            <p class="lead text-muted">Bienvenido al catálogo de películas universal donde podrá ver sus películas favoritas de ayer y hoy.</p>
+            <p>
+                <a href="#" routerLink="/agregar-pelicula" class="btn btn-success my-2 mr-2">Agregar película</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                <div *ngFor="let pelicula of peliculas" class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top"
+                            data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                            alt="Thumbnail [100%x225]"
+                            src="{{pelicula.img_pelicula}}"
+                            data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{pelicula.nombre_pelicula}}</h5>
+                            <p class="card-text">{{pelicula.sinopsis}}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-primary" routerLink="/ver-pelicula/{{pelicula._id}}">Ver</button>
+                                    <button type="button" class="btn btn-sm btn-outline-info" routerLink="/editar-pelicula/{{pelicula._id}}">Editar</button>
+                                    <button (click)="eliminarPelicula(pelicula._id)" type="button" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+<!--
+<button (click)="obtenerRegistro()" class="btn btn-warning mr-2">Obtener un dato</button>
+<button (click)="obtenerRegistros()" class="btn btn-success mr-2">Datos</button>
+<button (click)="registrarPelicula()" class="btn btn-primary mr-2">Registrar</button>
+<button (click)="eliminarRegistro()" class="btn btn-danger">Eliminar</button>-->

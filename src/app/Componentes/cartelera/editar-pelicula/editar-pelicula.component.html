@@ -1,0 +1,97 @@
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">RepelisFISI</h1>
+            <p class="lead text-muted">Bienvenido al catálogo de películas universal donde podrá ver sus películas
+                favoritas de ayer y hoy.</p>
+            <p>
+                <a href="#" routerLink="/central-pelicula" class="btn btn-info my-2 mr-2">Regresar</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top"
+                            data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                            alt="Thumbnail [100%x225]"
+                            src="{{imagenPelicula}}"
+                            data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12 mb-4">
+
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="inputTituloPelicula">Título</label>
+                                            <input (keyup)="metTitulo($event)" [(ngModel)]="tituloPelicula" name="tituloPelicula" type="text" class="form-control" id="inputTituloPelicula"
+                                                placeholder="">
+                                                <small *ngIf="oblTitulo" style="color: red;">
+                                                    *Campo obligatorio
+                                                </small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputSinopsis">Sinopsis</label>
+                                            <textarea (keyup)="metSinopsis($event)" [(ngModel)]="sinopsis" name="sinopsis" class="form-control" id="inputSinopsis" rows="3"></textarea>
+                                            <small *ngIf="oblSinopsis" style="color: red;">
+                                                *Campo obligatorio
+                                            </small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputDirector">Director</label>
+                                            <input (keyup)="metDirector($event)" [(ngModel)]="director" name="director" type="text" class="form-control" id="inputDirector" placeholder="">
+                                            <small *ngIf="oblDirector" style="color: red;">
+                                                *Campo obligatorio
+                                            </small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputFechaEstreno">Fecha de estreno</label>
+                                            <input (change)="metFecEstreno()" [(ngModel)]="fechaEstreno" name="fechaEstreno" type="date" class="form-control" id="inputFechaEstreno"
+                                                placeholder="">
+                                                <small *ngIf="oblFecEstreno" style="color: red;">
+                                                    *Campo obligatorio
+                                                </small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputGenero">Género</label>
+                                            <input (keyup)="metGenero($event)" [(ngModel)]="genero" name="genero" type="text" class="form-control" id="inputGenero" placeholder="">
+                                            <small *ngIf="oblGenero" style="color: red;">
+                                                *Campo obligatorio
+                                            </small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Imagen de la película</label>
+                                            <div class="custom-file">
+                                                <input (change)="capturarInput()" type="file" class="custom-file-input"
+                                                    id="file">
+                                                <label class="custom-file-label rounded-0" for="file">Imagen</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-light d-flex bd-highlight mb-3">
+                            <div class="p-2 bd-highlight"><button (click)="cancelar()" class="btn btn-outline-danger">Cancelar</button></div>
+                            <div class="ml-auto p-2 bd-highlight"><button (click)="editarPelicula()"
+                                    class="btn btn-outline-success">Guardar</button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>

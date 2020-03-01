@@ -1,0 +1,37 @@
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">RepelisFISI</h1>
+            <p class="lead text-muted">Bienvenido al catálogo de películas universal donde podrá ver sus películas
+                favoritas de ayer y hoy.</p>
+            <p>
+                <a href="#" routerLink="/central-pelicula" class="btn btn-info my-2 mr-2">Regresar</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img style="height: 225px; width: 100%; display: block;"
+                            src="{{imagenPelicula}}" class="card-img" alt="imagen">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{tituloPelicula}}</h5>
+                            <p class="card-text">{{sinopsis}}</p>
+                            <small><b>Director: </b>{{director}}</small>
+                            <p class="card-text"><small class="text-muted">{{fechaEstreno}} / {{genero}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+

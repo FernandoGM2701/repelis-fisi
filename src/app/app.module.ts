@@ -3,20 +3,33 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListarComponent } from './Persona/listar/listar.component';
-import { AddComponent } from './Persona/add/add.component';
-import { EditComponent } from './Persona/edit/edit.component';
+
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './Cabecera/navbar/navbar.component';
+import { FooterComponent } from './Cabecera/footer/footer.component';
+import { AgregarPeliculaComponent } from './Componentes/cartelera/agregar-pelicula/agregar-pelicula.component';
+import { CentralPeliculaComponent } from './Componentes/cartelera/central-pelicula/central-pelicula.component';
+import { EditarPeliculaComponent } from './Componentes/cartelera/editar-pelicula/editar-pelicula.component';
+import { PrincipalComponent } from './Componentes/cartelera/principal/principal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarComponent,
-    AddComponent,
-    EditComponent
+    NavbarComponent,
+    FooterComponent,
+    AgregarPeliculaComponent,
+    CentralPeliculaComponent,
+    EditarPeliculaComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
